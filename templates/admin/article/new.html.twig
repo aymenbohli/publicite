@@ -1,0 +1,54 @@
+{% extends 'admin/layouts/base.html.twig' %}
+
+
+{% block title %}New Article{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('admin/assets/dropzone/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/mystyle/style.css') }}">
+{% endblock stylesheets %}
+{% block javascripts %}
+    <script src="{{ asset('admin/assets/dropzone/dropzone.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/myscript/dropzone_articles.js') }}"></script>
+{% endblock javascripts %}
+{% block body %}
+    <div class="content container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">New Article</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('admin') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">New Article</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-chart">
+                    <div class="card-header row" style="margin: 0;">
+                        <div class="col-md-6">
+                            <h4 class="card-title">New Article</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="btn btn-success pull-right" href="{{ path('article_new') }}">Ajouter <i
+                                        class="fa fa-plus"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class='content'>
+                            <form action="/" class="dropzone" enctype="multipart/form-data" method="POST">
+                            </form>
+                            <button class="btn btn-success" type="submit" id="submit-all">Save</button>
+                        </div>
+{#
+                        {{ include('admin/article/_form.html.twig') }}
+#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

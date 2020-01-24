@@ -1,0 +1,69 @@
+{% extends 'admin/layouts/base.html.twig' %}
+
+{% block title %}Annonces{% endblock %}
+
+{% block body %}
+    <div class="content container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="page-title">Annonces</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('admin') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Annonces</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-chart">
+                    <div class="card-header row" style="margin: 0;">
+                        <div class="col-md-6">
+                            <h4 class="card-title">Annonces</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <a class="btn btn-success pull-right" href="{{ path('annonce_new') }}">Ajouter <i class="fa fa-plus"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="datatable table table-stripped">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Path</th>
+                                <th>Datein</th>
+                                <th>Dateout</th>
+                                <th>Place</th>
+                                <th>actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tbody>
+                            {% for annonce in annonces %}
+                                <tr>
+                                    <td>{{ annonce.title }}</td>
+                                    <td>{{ annonce.path }}</td>
+                                    <td>{{ annonce.datein ? annonce.datein|date('Y-m-d H:i:s') : '' }}</td>
+                                    <td>{{ annonce.dateout ? annonce.dateout|date('Y-m-d H:i:s') : '' }}</td>
+                                    <td>{{ annonce.place }}</td>
+                                    <td>
+                                        {{ include('admin/annonce/_btn.html.twig') }}
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="7">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,10 @@
+{% extends 'admin/layouts/base.html.twig' %}
+
+{% block title %}Edit Categories{% endblock %}
+
+{% block body %}
+    <h1>Edit Categories</h1>
+
+    {{ include('admin/categories/_form.html.twig', {'button_label': 'Update'}) }}
+
+{% endblock %}

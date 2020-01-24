@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>{% block title %}Admin{% endblock %}</title>
+    {% include('admin/layouts/style.html.twig') %}
+</head>
+<body>
+<!-- Main Wrapper -->
+<div class="main-wrapper">
+    <!-- Header -->
+    {% include('admin/layouts/header.html.twig') %}
+    <!-- /Header -->
+    <!-- Sidebar -->
+    {% include('admin/layouts/sidebar.html.twig') %}
+    <!-- /Sidebar -->
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+        {% block body %}{% endblock %}
+    </div>
+    <!-- /Page Wrapper -->
+</div>
+<!-- /Main Wrapper -->
+{% include('admin/layouts/script.html.twig') %}
+</body>
+</html>

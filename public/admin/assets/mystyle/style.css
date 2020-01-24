@@ -1,0 +1,29 @@
+button.btn.btn-lg.dark {
+    display: inline-block !important;
+    font-size: 1em !important;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 1.2em;
+    color: #ffffff;
+    background-color: #f1101d;
+    margin: 10px auto;
+    width: 100%;
+    text-transform: lowercase;
+}
+
+.dz-preview.dz-complete.dz-image-preview {
+    text-align: center;
+}
+
+#rm {
+    margin: 12px;
+}
+
+button.btn.btn-lg.dark:hover {
+    text-decoration: none !important;
+    opacity: 1;
+}
+
+.dropzone.dz-clickable * {
+    cursor: pointer;
+}
